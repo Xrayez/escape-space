@@ -15,9 +15,8 @@ onready var info_label_timer := $InfoText/Timer as Timer
 onready var goals := $Goals as Control
 onready var time_label := $Time/Label as Label
 onready var time_progress := $Time/TextureProgress as Range
-onready var preloader := $ResourcePreloader as ResourcePreloader
-onready var goal_scene := preloader.get_resource("goal") as PackedScene
-onready var time_gradient := preloader.get_resource("time_gradient") as Gradient
+onready var goal_scene := Preloader.get_resource("hud_goal_scene") as PackedScene
+onready var time_gradient := Preloader.get_resource("hud_time_gradient") as Gradient
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("toggle_pause"):

@@ -13,8 +13,7 @@ export(int, 10, 1000) var launch_speed := 200
 onready var launch_position := $LaunchPosition as Position2D
 onready var launch_timer := $LaunchTimer as Timer
 onready var animation_player := $AnimationPlayer as AnimationPlayer
-onready var preloader := $ResourcePreloader as ResourcePreloader
-onready var ball_scene := preloader.get_resource("ball") as PackedScene
+onready var ball_scene := Preloader.get_resource("ball_scene") as PackedScene
 
 func _ready() -> void:
 	$"/root/Game".connect("state_changed", self, "_on_game_state_changed")

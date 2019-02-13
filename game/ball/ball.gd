@@ -14,14 +14,11 @@ const MAX_SPEED = 600
 var claimed := false
 
 onready var animation_player := $AnimationPlayer as AnimationPlayer
-# FIXME: Workaround for <https://github.com/godotengine/godot/issues/23207>
-#warning-ignore:unused_class_variable
-onready var preloader := $ResourcePreloader as ResourcePreloader
 onready var bounce_sounds := [
-	preloader.get_resource("bounce.0"),
-	preloader.get_resource("bounce.1"),
-	preloader.get_resource("bounce.2"),
-	preloader.get_resource("bounce.3"),
+	Preloader.get_resource("ball_bounce.0"),
+	Preloader.get_resource("ball_bounce.1"),
+	Preloader.get_resource("ball_bounce.2"),
+	Preloader.get_resource("ball_bounce.3"),
 ]
 
 func _integrate_forces(_state: Physics2DDirectBodyState) -> void:

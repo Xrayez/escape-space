@@ -4,6 +4,7 @@
 extends Control
 
 onready var game := $"/root/Game" as Node
+onready var menu_scene := Preloader.get_resource("menu_scene") as PackedScene
 
 func _on_continue_pressed() -> void:
 	get_tree().paused = false
@@ -16,4 +17,4 @@ func _on_restart_level_pressed() -> void:
 
 func _on_exit_to_menu_pressed() -> void:
 	get_tree().paused = false
-	get_tree().change_scene("res://menu/menu.tscn")
+	get_tree().change_scene_to(menu_scene)

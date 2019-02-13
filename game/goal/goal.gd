@@ -13,9 +13,8 @@ export(int, 1, 100) var balls_required := 10
 
 onready var animation_player := $AnimationPlayer as AnimationPlayer
 onready var ball_counter := $Panel/BallCounter as Label
-onready var preloader := $ResourcePreloader as ResourcePreloader
-onready var get_ball_sound := preloader.get_resource("get_ball")
-onready var close_sound := preloader.get_resource("close")
+onready var get_ball_sound := Preloader.get_resource("goal_get_ball") as AudioStream
+onready var close_sound := Preloader.get_resource("goal_close") as AudioStream
 
 func _ready() -> void:
 	connect("ball_received", $"/root/Game", "_on_goal_ball_received")

@@ -12,15 +12,15 @@ onready var current_menu := $"/root/Menu/Control/Main" as Control
 onready var root_control := $Control as Control
 onready var animation_player := $AnimationPlayer as AnimationPlayer
 onready var background := $ParallaxBackground as ParallaxBackground
-onready var preloader := $ResourcePreloader as ResourcePreloader
-onready var hover_sound := preloader.get_resource("hover") as AudioStream
-onready var click_sound := preloader.get_resource("click") as AudioStream
+onready var hover_sound := Preloader.get_resource("menu_hover") as AudioStream
+onready var click_sound := Preloader.get_resource("menu_click") as AudioStream
+onready var music := Preloader.get_resource("menu_music") as AudioStream
 
 signal transition_finished
 
 func _ready() -> void:
 	animation_player.play("fade_in")
-	Music.play_song(preload("res://menu/menu.ogg"))
+	Music.play_song(music)
 
 	# Connect menu nodes for menu transitions
 	for control in root_control.get_children():

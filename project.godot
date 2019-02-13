@@ -101,6 +101,7 @@ Settings="*res://autoload/settings.gd"
 Music="*res://autoload/music.tscn"
 Sound="*res://autoload/sound.gd"
 ColorCorrection="*res://autoload/color_correction.tscn"
+Preloader="*res://autoload/preloader.tscn"
 
 [debug]
 

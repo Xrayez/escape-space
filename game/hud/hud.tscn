@@ -1,19 +1,15 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://game/hud/theme.tres" type="Theme" id=1]
 [ext_resource path="res://game/hud/hud.gd" type="Script" id=2]
 [ext_resource path="res://game/hud/vignette.png" type="Texture" id=3]
 [ext_resource path="res://fonts/default_1.tres" type="DynamicFont" id=4]
-[ext_resource path="res://game/hud/goal.tscn" type="PackedScene" id=5]
-[ext_resource path="res://game/hud/time_gradient.tres" type="Gradient" id=6]
-[ext_resource path="res://game/pause_menu/pause_menu.tscn" type="PackedScene" id=7]
+[ext_resource path="res://game/pause_menu/pause_menu.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CanvasItemMaterial" id=1]
-
 blend_mode = 2
 
 [sub_resource type="Animation" id=2]
-
 resource_name = "fade_in"
 length = 0.3
 step = 0.05
@@ -31,7 +27,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=3]
-
 length = 1.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:modulate")
@@ -47,16 +42,13 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Gradient" id=4]
-
 colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 1 )
 
 [sub_resource type="GradientTexture" id=5]
-
 gradient = SubResource( 4 )
 width = 176
 
 [sub_resource type="Animation" id=6]
-
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:color")
 tracks/0/interp = 1
@@ -214,10 +206,7 @@ value = 0.5
 texture_progress = SubResource( 5 )
 fill_mode = 6
 
-[node name="ResourcePreloader" type="ResourcePreloader" parent="."]
-resources = [ PoolStringArray( "goal", "time_gradient" ), [ ExtResource( 5 ), ExtResource( 6 ) ] ]
-
-[node name="PauseMenu" parent="." instance=ExtResource( 7 )]
+[node name="PauseMenu" parent="." instance=ExtResource( 5 )]
 visible = false
 
 [node name="ColorRect" type="ColorRect" parent="."]

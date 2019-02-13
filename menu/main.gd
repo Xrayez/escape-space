@@ -5,12 +5,14 @@ extends Control
 
 signal menu_changed
 
+onready var game_scene := Preloader.get_resource("game_scene") as PackedScene
+
 func _on_play_pressed() -> void:
 	emit_signal("menu_changed")
 	Music.fade_out()
 
 	yield($"/root/Menu", "transition_finished")
-	var error := get_tree().change_scene("res://game/game.tscn")
+	var error := get_tree().change_scene_to(game_scene)
 
 	if error != OK:
 		push_error("Couldn't load the game scene.")
